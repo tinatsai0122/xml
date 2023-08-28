@@ -1,0 +1,31 @@
+<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="contact">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="nom" type="xsd:string"/>
+                <xsd:element name="prenom" type="xsd:string"/>
+                <xsd:element ref="email"/>
+                <xsd:element ref="tel"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="email">
+        <xsd:complexType>
+            <xsd:all>
+                <xsd:element ref="intitule"/>
+                <xsd:element name="value" type="xsd:string"/>
+            </xsd:all>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="tel">
+        <xsd:complexType>
+            <xsd:all>
+                <xsd:element ref="intitule"/>
+                <xsd:element name="value" type="xsd:positiveInteger"/>
+            </xsd:all>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="intitule" type="xsd:string"/>
+</xsd:schema>

@@ -1,0 +1,9 @@
+<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:simpleType name="Month">
+        <xsd:restriction base="xsd:positiveInteger">
+            <xsd:maxInclusive value="12"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:element name="month" type="Month"/>
+</xsd:schema>

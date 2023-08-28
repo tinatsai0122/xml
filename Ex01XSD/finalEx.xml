@@ -1,0 +1,36 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+
+<books xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./finalEx.xsd">
+    <serie name="Harry Potter">
+        <book tome="1">
+            <titre>Harry Potter: Philosopher's Stone</titre>
+            <auteur>
+                <nom>Rowling</nom>
+                <prenom>Joanne</prenom>
+            </auteur>
+            <genres>
+                <genre>Fantastique</genre>
+                <genre>Jeunesse</genre>
+                <genre>Roman</genre>
+                <genre>Fiction</genre>
+            </genres>
+            <datePublication forma="dd/mm/yyyy">02/07/1998
+            </datePublication>
+        </book>
+        <book tome="2">
+            <titre>Harry Potter: Chamber of Secrets</titre>
+            <auteur>
+                <nom>Rowling</nom>
+                <prenom>Joanne</prenom>
+            </auteur>
+            <genres>
+                <genre>Fantastique</genre>
+                <genre>Jeunesse</genre>
+                <genre>Roman</genre>
+                <genre>Fiction</genre>
+            </genres>
+            <datePublication forma="dd/mm/yyyy">02/07/1998
+            </datePublication>
+        </book>
+    </serie>
+</books>

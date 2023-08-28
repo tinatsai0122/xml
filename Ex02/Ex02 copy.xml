@@ -1,0 +1,29 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE annuaireTel SYSTEM "./Ex02.dtd">
+
+<annuaireTel>
+    <personne>
+        <sex>H</sex>
+        <nom>Smith</nom>
+        <prenom>John</prenom>
+        <adresse>
+            <numero>1</numero>
+            <boitePostale/>
+            <rue>Rue de la Paix</rue>
+            <codePostal>1000</codePostal>
+            <ville>Bruxelles</ville>
+            <pays>Belgique</pays>
+        </adresse>
+        <telephones>
+            <telephone type="Portable" nationnal="+32">474849477</telephone>
+            <telephone type="Fixe" nationnal="+32">456123456</telephone>
+        </telephones>
+        <emails>
+            <email>
+                <type>Professionel</type>
+                <courriel>john.smith@redhat.com<></courriel>
+                <domain>redhat.com</domain>
+            </email>
+        </emails>
+    </personne>
+</annuaireTel>

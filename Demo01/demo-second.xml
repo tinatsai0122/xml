@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!DOCTYPE scores SYSTEM "./demo-dtd.dtd">
+
+<scores>
+    <score>
+        <game nb-player="4">
+            <Dames />
+        </game>
+        <point id="score_01_aude" total-ref="total_aude" name="Aude">2</point>
+        <point id="score_01_Michael" total-ref="total_Michael"  name="Michael">20</point>
+        <point id="score_01_Samuel" total-ref="total_Samuel"  name="Samuel">12</point>
+        <point id="score_01_Thierry" total-ref="total_Thierry"  name="Thierry">8</point>
+    </score>
+    <total>
+        <point id="total_aude" name="Aude">2</point>
+        <point id="total_Michael" name="Michael">20</point>
+        <point id="total_Samuel" name="Samuel">12</point>
+        <point id="total_Thierry" name="Thierry">8</point>
+    </total>
+</scores>

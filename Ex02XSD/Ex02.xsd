@@ -1,0 +1,148 @@
+<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:simpleType name="T_codePostal">
+        <xsd:restriction base="xsd:integer"> 
+            <xsd:pattern value="[0-9]{4}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="T_nationalCode">
+        <xsd:restriction base="xsd:integer">
+            <xsd:pattern value="[0-9]{2}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="T_email">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="T_domain">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[a-z0-9.-]+\.[a-z]{2,4}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="T_text">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="64"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="T_sex">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="H"/>
+            <xsd:enumeration value="F"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+            
+    <xsd:simpleType name="T_typeEmail">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Professionel"/>
+            <xsd:enumeration value="Personnel"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+        
+    <xsd:simpleType name="T_typeTel">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Fixe"/>
+            <xsd:enumeration value="Portable"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="TA_type">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="type" type="T_typeTel" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:element name="annuaireTel">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="personne" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="personne">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="sex"/>
+                <xsd:element ref="nom"/>
+                <xsd:element ref="prenom"/>
+                <xsd:element ref="adresse" minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element ref="telephones"/>
+                <xsd:element ref="emails"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>   
+
+    <xsd:element name="sex" type="T_sex"/>
+    <xsd:element name="nom" type="T_text"/>
+    <xsd:element name="prenom" type="T_text"/>
+    <xsd:element name="adresse">
+        <xsd:complexType>
+            <xsd:all>
+                <xsd:element ref="numero"/>
+                <xsd:element ref="boitePostale" minOccurs="0"/>
+                <xsd:element ref="rue"/>
+                <xsd:element ref="codePostal"/>
+                <xsd:element ref="ville"/>
+                <xsd:element ref="pays"/>
+            </xsd:all>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="telephones">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="telephone" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="telephone">
+        <xsd:complexType>
+            <xsd:simpleContent>
+                <xsd:extension base="xsd:positiveInteger">
+                    <xsd:attribute name="type" type="T_typeTel" use="required"/>
+                    <xsd:attribute name="nationnal" type="xsd:integer" default="+32"/>
+                </xsd:extension>
+            </xsd:simpleContent>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="emails">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="email" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="email">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="type"/>
+                <xsd:element ref="courriel"/>
+                <xsd:element ref="domain"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="numero" type="xsd:positiveInteger"/>
+    <xsd:element name="boitePostale" type="xsd:string"/>
+    <xsd:element name="rue" type="T_text"/>
+    <xsd:element name="codePostal" type="T_codePostal"/>
+    <xsd:element name="ville" type="T_text"/>
+    <xsd:element name="pays" type="T_text"/>
+    <xsd:element name="type" type="T_typeEmail"/>
+    <xsd:element name="courriel" type="T_email"/>
+    <xsd:element name="domain" type="T_domain"/>
+</xsd:schema>

@@ -1,0 +1,14 @@
+<!ELEMENT liste_livres (livre+)>
+    <!ELEMENT livre (série?, titre, auteur+, genres, datePublication)>
+        <!ELEMENT série (#PCDATA)>
+        <!ATTLIST série 
+            tome CDATA #REQUIRED>
+        <!ELEMENT titre (#PCDATA)>
+        <!ELEMENT auteur (nom,prénom)>
+            <!ELEMENT nom (#PCDATA)>
+            <!ELEMENT prénom (#PCDATA)>
+        <!ELEMENT genres (genre+)>
+            <!ELEMENT genre (#PCDATA)>
+        <!ELEMENT datePublication (#PCDATA)>
+        <!ATTLIST datePublication 
+            format CDATA #FIXED "dd/mm/yyyy">

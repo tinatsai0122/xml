@@ -1,0 +1,12 @@
+<!ELEMENT scores (score+, total)>
+<!ELEMENT score (game, point, point+)>
+<!ELEMENT game (Uno|Dames|Echec)>
+<!ATTLIST game nb-player (2|3|4|5|6) #REQUIRED>
+<!ELEMENT Uno EMPTY>
+<!ELEMENT Dames EMPTY>
+<!ELEMENT Echec EMPTY>
+<!ELEMENT point (#PCDATA)>
+<!ATTLIST point name CDATA #REQUIRED>
+<!ATTLIST point id ID #REQUIRED>
+<!ATTLIST point total-ref IDREF #IMPLIED>
+<!ELEMENT total (point, point+)>

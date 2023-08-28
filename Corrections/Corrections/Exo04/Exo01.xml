@@ -1,0 +1,63 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!-- VERSION 1 -->
+
+<!DOCTYPE liste_livres SYSTEM "./Exo01.dtd">
+
+<liste_livres>
+    <livre>
+        <série tome="1">Harry Potter</série>
+        <titre>Harry Potter : A l'école des sorciers</titre>
+        <auteur>
+            <nom>Rowling</nom>
+            <prénom>Joanne</prénom>
+        </auteur>
+        <genres>
+            <genre>Fantastique</genre>
+            <genre>Fiction</genre>
+            <genre>Roman</genre>
+        </genres>
+        <datePublication format="dd/mm/yyyy">26/06/1997</datePublication>
+    </livre>
+    <livre>
+        <série tome="2">Harry Potter</série>
+        <titre>Harry Potter : La chambre des secrets</titre>
+        <auteur>
+            <nom>Rowling</nom>
+            <prénom>Joanne</prénom>
+        </auteur>
+        <genres>
+            <genre>Fantastique</genre>
+            <genre>Fiction</genre>
+            <genre>Roman</genre>
+        </genres>
+        <datePublication format="dd/mm/yyyy">02/07/1998</datePublication>
+    </livre>
+    <livre>
+        <série tome="1">Le seigneur des anneaux</série>
+        <titre>Le seigneur des anneaux : La communauté de l'anneau</titre>
+        <auteur>
+            <nom>Tolkien</nom>
+            <prénom>John Ronald Reuel</prénom>
+        </auteur>
+        <genres>
+            <genre>Fantastique</genre>
+            <genre>Fiction</genre>
+            <genre>Roman</genre>
+        </genres>
+        <datePublication format="dd/mm/yyyy">29/07/1954</datePublication>
+    </livre>
+    <livre>
+        <série tome="2">Le seigneur des anneaux</série>
+        <titre>Le seigneur des anneaux : Les deux tours</titre>
+        <auteur>
+            <nom>Tolkien</nom>
+            <prénom>John Ronald Reuel</prénom>
+        </auteur>
+        <genres>
+            <genre>Fantastique</genre>
+            <genre>Fiction</genre>
+            <genre>Roman</genre>
+        </genres>
+        <datePublication format="dd/mm/yyyy">11/11/1954</datePublication>
+    </livre>
+</liste_livres>

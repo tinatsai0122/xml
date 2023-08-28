@@ -1,0 +1,41 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE bibliographie SYSTEM "./bibliographie.dtd">
+
+<bibliographie>
+    <livre>
+        <titre tome="1" nbPage="235">Littérature</titre>
+        <auteur>GIRAUDOUX Jean</auteur>
+        <infoEdition>
+            <editeur>BIGOT Michel</editeur>
+            <lieuEdition>Paris</lieuEdition>
+            <lieuImpression>Paris</lieuImpression> 
+            <isbn>978-3-16-148410-0</isbn>        
+        </infoEdition>
+        <avis note="5">
+            <nom>Lily</nom>
+            <commentaire>Très bon livre</commentaire>
+        </avis>
+        <avis note="4">
+            <nom>John</nom>
+            <commentaire>Bon livre</commentaire>
+        </avis>
+    </livre>
+    <article>
+        <titre>Semi-conducteurs</titre>
+        <auteur>BOK Julien</auteur>
+        <reference>
+            <nomJournal>Encyclopaedia Universalis</nomJournal>
+            <volume>2</volume>
+            <anneePublication>1994</anneePublication>
+            <numeroJournal>p. 879-883</numeroJournal>
+        </reference>
+        <avis note="4">
+            <nom>Jolie</nom>
+            <commentaire>Très bon article</commentaire>
+        </avis>
+        <avis note="5">
+            <nom>Chris</nom>
+            <commentaire>Bon article</commentaire>
+        </avis>
+    </article>
+</bibliographie>

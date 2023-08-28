@@ -1,0 +1,41 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+
+<formation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="./Exo05.xsd">
+    <nom>WAD23</nom>
+    <eleves>
+        <eleve>
+            <nom>Bouharat</nom>
+            <prénom>Najoua</prénom>
+            <date-naissance>1982-10-04</date-naissance>
+        </eleve>
+        <eleve>
+            <nom>Rottin</nom>
+            <prénom>Elena</prénom>
+            <date-naissance>1979-04-23</date-naissance>
+        </eleve>
+        <eleve>
+            <nom>Cardu</nom>
+            <prénom>Emanuela</prénom>
+            <date-naissance>1977-04-19</date-naissance>
+        </eleve>
+    </eleves>
+    <matières>
+        <cours>
+            <nom>C#</nom>
+            <professeur>
+                <nom>Claes</nom>
+                <prénom>Alexandre</prénom>
+                <date-naissance>1987-05-01</date-naissance>
+            </professeur>
+        </cours>
+        <cours>
+            <nom>XML</nom>
+            <professeur>
+                <nom>Legrain</nom>
+                <prénom>Samuel</prénom>
+                <date-naissance>1987-09-27</date-naissance>
+            </professeur>
+        </cours>
+    </matières>
+</formation>

@@ -1,0 +1,15 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+
+<contact xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="./Demo-DiffType.xsd">
+    <nom>Legrain</nom>
+    <prenom>Samuel</prenom>
+    <email>
+        <intitule>Professionnel</intitule>
+        <value>samuel.legrain@bstorm.be</value>
+    </email>
+    <tel>
+        <intitule>Privé</intitule>
+        <value>080033800</value>
+    </tel>
+</contact>

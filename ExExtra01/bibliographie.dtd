@@ -1,0 +1,23 @@
+<!ELEMENT bibliographie (livre*, article*)>
+
+<!ELEMENT livre (titre, auteur, infoEdition, avis*)>
+<!ELEMENT titre (#PCDATA)>
+<!ATTLIST titre tome CDATA #IMPLIED>
+<!ATTLIST titre nbPage CDATA #IMPLIED>
+<!ELEMENT auteur (#PCDATA)>
+<!ELEMENT infoEdition (editeur, lieuEdition, lieuImpression,isbn)>
+<!ELEMENT editeur (#PCDATA)>
+<!ELEMENT lieuEdition (#PCDATA)>
+<!ELEMENT lieuImpression (#PCDATA)>
+<!ELEMENT isbn (#PCDATA)>
+<!ELEMENT avis (nom, commentaire)>
+<!ATTLIST avis note (0|1|2|3|4|5) #REQUIRED>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT commentaire (#PCDATA)>
+<!ELEMENT article (titre, auteur, reference, avis*)>
+<!ELEMENT reference (nomJournal, volume, anneePublication, numeroJournal)>
+<!ELEMENT nomJournal (#PCDATA)>
+<!ELEMENT nbPage (#PCDATA)>
+<!ELEMENT volume (#PCDATA)>
+<!ELEMENT anneePublication (#PCDATA)>
+<!ELEMENT numeroJournal (#PCDATA)>

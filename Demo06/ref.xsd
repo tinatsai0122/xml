@@ -1,0 +1,41 @@
+<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+
+<xsd:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="title" type="xsd:string"/>
+    <xsd:element name="author" type="xsd:string"/>
+    <xsd:element name="publish-year" type="xsd:positiveInteger"/>
+    <xsd:element name="publication">
+    <xsd:element name="magazine" type="xsd:string"/>
+    <xsd:element name="subject" type="xsd:string"/>
+        <xsd:complexType>
+            <xsd:choice>
+                <xsd:element name="book">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="title"/>
+                            <xsd:element ref="author"/>
+                            <xsd:element ref="publish-year"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="article"></xsd:element>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="title"/>
+                            <xsd:element ref="author"/>
+                            <xsd:element ref="publish-year"/>
+                            <xsd:element ref="magazine"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                <xsd:element name="report"></xsd:element>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="subject"/>
+                            <xsd:element ref="author"/>
+                            <xsd:element ref="magazine"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+            </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

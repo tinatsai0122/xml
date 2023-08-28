@@ -1,0 +1,11 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+
+<publication xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="./Demo-Ref.xsd">
+    <article>
+        <title>Le XML est de nouveau en vogue!</title>
+        <author>Samuel</author>
+        <publish-year>2023</publish-year>
+        <magazine>BStormMagazine</magazine>
+    </article>
+</publication>

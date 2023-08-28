@@ -1,0 +1,75 @@
+<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!-- Déclaration TYPE SIMPLE -->
+    <xsd:simpleType name="T_enum_lesson">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="xml"/>
+            <xsd:enumeration value="csharp"/>
+            <xsd:enumeration value="js"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="T_name">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="64"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="T_email">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[a-zA-Z0-9\.\-]*@[a-zA-Z0-9\.\-]*\.[a-zA-Z0-9\.\-]{2,3}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="T_note">
+        <xsd:simpleContent>
+            <xsd:extension base="T_note_limit">
+                <xsd:attribute name="date" type="xsd:date"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:simpleType name="T_note_limit">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="20"/>
+            <xsd:totalDigits value="3"/>
+            <xsd:fractionDigits value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+<!-- Déclaration TYPE COMPLEX -->
+
+<!-- Déclaration ELEMENT -->
+    <xsd:element name="evaluation">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="student" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="lesson" type="T_enum_lesson"/>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="student">
+        <xsd:complexType>
+            <xsd:all>
+                <xsd:element ref="firstname"/>
+                <xsd:element ref="lastname"/>
+                <xsd:element ref="email"/>
+                <xsd:element ref="notes"/>
+            </xsd:all>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="firstname" type="T_name"/>
+    <xsd:element name="lastname" type="T_name"/>
+    <xsd:element name="email" type="T_email"/>
+    <xsd:element name="notes">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="note" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="note" type="T_note"/>
+</xsd:schema>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!DOCTYPE scores SYSTEM "./demo-dtd.dtd">
+
+<scores>
+    <score>
+        <game nb-player="4">
+            <Uno />
+        </game>
+        <point id="score_01_aude" total-ref="total_aude" name="Aude">255</point>
+        <point id="score_01_Michael" total-ref="total_Michael"  name="Michael">249</point>
+        <point id="score_01_Samuel" total-ref="total_Samuel"  name="Samuel">125</point>
+        <point id="score_01_Thierry" total-ref="total_Thierry"  name="Thierry">0</point>
+    </score>
+    <score>
+        <game nb-player="4">
+            <Uno />
+        </game>
+        <point id="score_02_aude" total-ref="total_aude" name="Aude">42</point>
+        <point id="score_02_Michael" total-ref="total_Michael"  name="Michael">13</point>
+        <point id="score_02_Samuel" total-ref="total_Samuel"  name="Samuel">2</point>
+        <point id="score_02_Thierry" total-ref="total_Thierry"  name="Thierry">255</point>
+    </score>
+    <total>
+        <point id="total_aude" name="Aude">297</point>
+        <point id="total_Michael" name="Michael">262</point>
+        <point id="total_Samuel" name="Samuel">127</point>
+        <point id="total_Thierry" name="Thierry">255</point>
+    </total>
+</scores>

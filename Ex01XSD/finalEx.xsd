@@ -1,0 +1,94 @@
+<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:simpleType name="T_text">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="64"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="TA_tome">
+        <xsd:simpleContent>
+            <xsd:extension base="T_tome">
+                <xsd:attribute name="tome" type="xsd:integer" use="required"/>
+            </xsd:extension> 
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="T_tome">
+        <xsd:restriction base="xsd:integer">
+            <xsd:maxLength value="50"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="TA_date">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string"> 
+                <xsd:attribute name="forma" type="T_forma" use="required"/> 
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:simpleType name="T_forma">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[d]{2}/[m]{2}/[y]{4}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+
+    <xsd:element name="books">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="serie" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="serie">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="book" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="name" type="T_text"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="book">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="titre"/>
+                <xsd:element ref="auteur"/>
+                <xsd:element ref="genres"/>
+                <xsd:element ref="datePublication"/>
+            </xsd:sequence>
+            <xsd:attribute name="tome" type="T_tome"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="titre" type="xsd:string"/>
+    <xsd:element name="auteur">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="nom"/>
+                <xsd:element ref="prenom"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="nom" type="T_text"/>
+    <xsd:element name="prenom" type="T_text"/>
+
+    <xsd:element name="genres">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="genre" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="genre" type="T_text"/>
+    <xsd:element name="datePublication" type="TA_date"/>
+
+</xsd:schema>

@@ -1,0 +1,4 @@
+<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="month" type="xsd:positiveInteger"/>
+</xsd:schema>

@@ -1,0 +1,61 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+
+<!DOCTYPE annuaire SYSTEM "./Exo02.dtd">
+
+<annuaire>
+    <personne>
+        <!-- F : Pour femme, M : pour Homme -->
+        <genre>F</genre>
+        <nom>Rowling</nom>
+        <prénom>Joanne</prénom>
+        <adresse>
+            <rue>Rue du progrès</rue>
+            <numéro>3</numéro>
+            <boite_postale/>
+            <code_postal>1030</code_postal>
+            <ville>Bruxelles</ville>
+            <pays>BELGIQUE</pays>
+        </adresse>
+        <telephones>
+            <telephone intitulé="Mobile">+3247112345</telephone>
+            <telephone intitulé="Fixe">+3271681234</telephone>
+        </telephones>
+        <emails>
+            <email>
+                <intitulé>Personnel</intitulé>
+                <courriel>j.k.rowling@hotmail.com</courriel>
+                <domaine>hotmail.com</domaine>
+            </email>
+        </emails>
+    </personne>
+    <personne>
+        <!-- F : Pour femme, M : pour Homme -->
+        <genre>M</genre>
+        <nom>Willis</nom>
+        <prénom>Bruce</prénom>
+        <adresse>
+            <rue>Avenue des cerisiers</rue>
+            <numéro>6B</numéro>
+            <boite_postale>12</boite_postale>
+            <code_postal>1200</code_postal>
+            <ville>Woluwe</ville>
+            <pays>BELGIQUE</pays>
+        </adresse>
+        <telephones>
+            <telephone intitulé="Mobile">+3247112345</telephone>
+            <telephone intitulé="Fixe">+3271681234</telephone>
+        </telephones>
+        <emails>
+            <email>
+                <intitulé>Personnel</intitulé>
+                <courriel>b.die.hard@hotmail.com</courriel>
+                <domaine>hotmail.com</domaine>
+            </email>
+            <email>
+                <intitulé>Professionnel</intitulé>
+                <courriel>no-more-movie@please.com</courriel>
+                <domaine>please.com</domaine>
+            </email>
+        </emails>
+    </personne>
+</annuaire>

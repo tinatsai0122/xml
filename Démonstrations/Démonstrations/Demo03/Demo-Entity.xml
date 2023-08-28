@@ -1,0 +1,24 @@
+<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+
+<!DOCTYPE movies [
+    <!ENTITY uni "Universal">
+    <!ENTITY r "®">
+    <!ELEMENT movies (movie*)>
+    <!ELEMENT movie (title, release-year,production)>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT production (#PCDATA)>
+    <!ELEMENT release-year (#PCDATA)>
+]>
+
+<movies>
+    <movie>
+        <title>Jurassic Park&r;</title>
+        <release-year>1993</release-year>
+        <production>&uni;</production>
+    </movie>
+    <movie>
+        <title>&lt;html-killer&gt;</title>
+        <release-year>2023</release-year>
+        <production>&uni;</production>
+    </movie>
+</movies>
