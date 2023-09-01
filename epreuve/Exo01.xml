@@ -1,0 +1,29 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+
+<!DOCTYPE composition SYSTEM "./Exo01.dtd"> 
+
+<composition id="bouquet_01">
+    <auteur>
+        <firstname>Floristore</firstname>
+        <lastname/>
+    </auteur>
+    <date_creation>2001-02-29</date_creation>
+    <fleuriste>
+        <ville>Paris</ville>
+    </fleuriste>
+    <composants>
+        <vase>
+            <matiere>Porcelaine</matiere>
+            <taille unit="cm">
+                <profondeur>50</profondeur>
+                <hauteur>70</hauteur>
+            </taille>
+        </vase>
+        <fleurs>
+            <nature>Européenne</nature>
+            <item>Tulipe</item>
+            <item>Glaieul</item>
+            <item>Marguerite</item>
+        </fleurs>
+    </composants>
+</composition>

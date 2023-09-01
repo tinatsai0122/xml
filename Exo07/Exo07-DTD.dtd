@@ -1,0 +1,21 @@
+<!ELEMENT bibliographie ((livre|article)*)>
+<!ELEMENT livre (titre, auteur+, tome, edition)>
+<!ELEMENT titre (#PCDATA)>
+<!ELEMENT auteur (#PCDATA)>
+<!ELEMENT tome (#PCDATA)>
+<!ATTLIST tome nb-page CDATA #REQUIRED>
+<!ELEMENT edition (#PCDATA)>
+<!ATTLIST edition 
+    editeur CDATA #REQUIRED
+    lieu-edition CDATA #REQUIRED
+    lieu-impression CDATA #REQUIRED
+    isbn CDATA #IMPLIED>
+<!ELEMENT article (titre, auteur+, publication)>
+<!ELEMENT publication EMPTY>
+<!ATTLIST publication 
+    nom CDATA #REQUIRED
+    numero-page CDATA #REQUIRED
+    annee-publication CDATA #REQUIRED
+    numero-journal CDATA #REQUIRED>
+<!ATTLIST livre avis CDATA #IMPLIED>
+<!ATTLIST article avis CDATA #IMPLIED>

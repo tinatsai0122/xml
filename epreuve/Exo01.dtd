@@ -1,0 +1,20 @@
+<!ELEMENT composition (auteur,date_creation,fleuriste?,composants)>
+<!ATTLIST composition id ID #REQUIRED>
+<!ELEMENT auteur (firstname,lastname?)>
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT lastname (#PCDATA)>
+<!ELEMENT date_creation (#PCDATA)>
+<!ATTLIST date_creation DATETIME CDATA #IMPLIED>
+<!ELEMENT fleuriste (lieu?,ville?)>
+<!ELEMENT lieu (#PCDATA)>
+<!ELEMENT ville (#PCDATA)>
+<!ELEMENT composants (vase,fleurs)>
+<!ELEMENT vase (matiere,taille)>
+<!ELEMENT matiere (#PCDATA)>
+<!ELEMENT taille (profondeur, hauteur)>
+<!ATTLIST taille unit (cm|in|ft) "cm">
+<!ELEMENT profondeur (#PCDATA)>
+<!ELEMENT hauteur (#PCDATA)>
+<!ELEMENT fleurs (nature,item+)>
+<!ELEMENT nature (#PCDATA)>
+<!ELEMENT item (#PCDATA)>

@@ -1,0 +1,88 @@
+<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- TYPE Simple -->
+    <xsd:simpleType name="T_text_255">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="255"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="T_text_63">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="63"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="T_isbn">
+        <xsd:restriction base="xsd:string">
+            <xsd:length value="10"/>
+            <xsd:pattern value="[0-9]*"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- TYPE complex -->
+
+    <xsd:complexType name="T_tome">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:positiveInteger">
+                <xsd:attribute name="nb-page" type="xsd:positiveInteger"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="T_edition">
+        <xsd:attribute name="editeur" type="T_text_63" use="required"/>
+        <xsd:attribute name="lieu-edition" type="T_text_63" use="required"/>
+        <xsd:attribute name="lieu-impression" type="T_text_63" use="required"/>
+        <xsd:attribute name="isbn" type="T_isbn"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_publication">
+        <xsd:attribute name="nom" type="T_text_63" use="required"/>
+        <xsd:attribute name="numero-page" type="xsd:positiveInteger" use="required"/>
+        <xsd:attribute name="annee-publication" type="xsd:positiveInteger" use="required"/>
+        <xsd:attribute name="numero-journal" type="xsd:positiveInteger" use="required"/>
+    </xsd:complexType>
+
+    <!-- Element -->
+
+    <xsd:element name="bibliographie">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:choice minOccurs="0" maxOccurs="unbounded">
+                    <xsd:element ref="livre"/>
+                    <xsd:element ref="article"/>
+                </xsd:choice>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="livre">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="titre"/>
+                <xsd:element ref="auteur" maxOccurs="unbounded"/>
+                <xsd:element ref="tome"/>
+                <xsd:element ref="edition"/>
+            </xsd:sequence>
+            <xsd:attribute ref="avis"/>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="article">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="titre"/>
+                <xsd:element ref="auteur"/>
+                <xsd:element ref="publication"/>
+            </xsd:sequence>
+            <xsd:attribute ref="avis"/>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="titre" type="T_text_255"/>
+    <xsd:element name="auteur" type="T_text_63"/>
+    <xsd:element name="tome" type="T_tome"/>
+    <xsd:element name="edition" type="T_edition"/>
+    <xsd:attribute name="avis" type="T_text_255"/>
+    <xsd:element name="publication" type="T_publication"/>
+</xsd:schema>

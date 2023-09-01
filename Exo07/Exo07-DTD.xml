@@ -1,0 +1,17 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+
+<!DOCTYPE bibliographie SYSTEM "./Exo07-DTD.dtd">
+<bibliographie>
+    <livre avis="Très simple de compréhension, accessible à tous et rédigé par un expert!">
+            <titre>Le XML pour les nulls!</titre>
+            <auteur>Michael Person</auteur>
+            <auteur>Thierry Morre</auteur>
+            <tome nb-page="253">1</tome>
+            <edition editeur="BStorm" lieu-edition="Louvain-La-Neuve" lieu-impression="Gosselies" isbn="915748642"/>
+    </livre>
+    <article avis="Très court et peu précis, mais une bonne base pour de futur recherche.">
+        <titre>Le XML n'est pas mort</titre>
+        <auteur>Aude Beurive</auteur>
+        <publication nom="BStormNews" numero-page="2" annee-publication="2023" numero-journal="115" />
+    </article>
+</bibliographie>

@@ -1,0 +1,185 @@
+<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<!-- Declaring Simple Type  -->
+        <xsd:simpleType name="T_text_short">
+              <xsd:restriction base="xsd:string">
+                <xsd:minLength value="1"/>
+                <xsd:maxLength value="20"/>
+              </xsd:restriction>
+        </xsd:simpleType>
+        
+        <xsd:simpleType name="T_text_medium">
+            <xsd:restriction base="xsd:string">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="50"/>
+            </xsd:restriction>
+      </xsd:simpleType>
+
+      <xsd:simpleType name="T_text_long">
+        <xsd:restriction base="xsd:string">
+          <xsd:minLength value="1"/>
+          <xsd:maxLength value="200"/>
+        </xsd:restriction>
+  </xsd:simpleType>
+
+
+  <xsd:simpleType name="T_decimal2">
+      <xsd:restriction base="xsd:decimal">
+          <xsd:fractionDigits value="2"/>
+      </xsd:restriction>
+  </xsd:simpleType>
+  
+     <xsd:simpleType name="T_lon">
+         <xsd:restriction base="xsd:float">
+             <xsd:minInclusive value="-180"/>
+             <xsd:maxInclusive value="180"/>
+          </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="T_lat">
+          <xsd:restriction base="xsd:float">
+              <xsd:minInclusive value="-90"/>
+              <xsd:maxInclusive value="90"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        
+        <xsd:simpleType name="T_unit">
+            <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="celsius"/>
+                <xsd:enumeration value="kelvin"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+
+    <!-- Declaring Complex Type  -->
+       <xsd:complexType name="TA_coord">
+           <xsd:attribute name="lon" type="T_lon" use="required"/>
+           <xsd:attribute name="lat" type="T_lat" use="required"/>
+       </xsd:complexType>
+       
+       <xsd:complexType name="TA_sun">
+           <xsd:attribute name="rise" type="xsd:dateTime" use="required"/>
+           <xsd:attribute name="set" type="xsd:dateTime" use="required"/>
+       </xsd:complexType>
+    
+       <xsd:complexType name="TA_temperature">
+           <xsd:attribute name="value" type="T_decimal2" use="required"/>
+           <xsd:attribute name="min" type="T_decimal2" use="required"/>
+           <xsd:attribute name="max" type="T_decimal2" use="required"/>
+           <xsd:attribute name="unit" type="T_unit" use="required"/>
+       </xsd:complexType>
+    
+    
+       <xsd:complexType name="TA_feels_like">
+           <xsd:attribute name="value" type="T_decimal2" use="required"/>
+           <xsd:attribute name="unit" type="T_unit" use="required"/>
+       </xsd:complexType>
+    
+       <xsd:complexType name="TA_humidity">
+           <xsd:attribute name="value" type="xsd:integer" use="required"/>
+           <xsd:attribute name="unit" type="xsd:string" use="required"/>
+       </xsd:complexType>
+       <xsd:complexType name="TA_pressure">
+           <xsd:attribute name="value" type="xsd:integer" use="required"/>
+           <xsd:attribute name="unit" type="xsd:string" use="required"/>
+       </xsd:complexType>
+       <xsd:complexType name="TA_speed">
+           <xsd:attribute name="value" type="T_decimal2" use="required"/>
+           <xsd:attribute name="unit" type="xsd:string" use="required"/>
+           <xsd:attribute name="name" type="xsd:string" use="required"/>
+       </xsd:complexType>
+    
+       <xsd:complexType name="TA_gusts">
+           <xsd:attribute name="value" type="T_decimal2" use="required"/>
+       </xsd:complexType>
+    
+       <xsd:complexType name="TA_direction">
+           <xsd:attribute name="value" type="xsd:integer" />
+           <xsd:attribute name="code" type="xsd:string" />
+           <xsd:attribute name="name" type="xsd:string" />
+       </xsd:complexType>
+    
+       <xsd:complexType name="TA_clouds">
+           <xsd:attribute name="value" type="xsd:integer"/>
+           <xsd:attribute name="name" type="T_text_long"/>
+        </xsd:complexType>
+    
+       <xsd:complexType name="TA_visibility">
+           <xsd:attribute name="value" type="xsd:integer"/>
+       </xsd:complexType>
+       <xsd:complexType name="TA_precipitation">
+           <xsd:attribute name="value" type="T_decimal2"/>
+           <xsd:attribute name="mode" type="xsd:string"/>
+           <xsd:attribute name="unit" type="xsd:string"/>
+       </xsd:complexType>
+       <xsd:complexType name="TA_weather">
+           <xsd:attribute name="number" type="xsd:integer"/>
+           <xsd:attribute name="value" type="xsd:string"/>
+           <xsd:attribute name="icon" type="xsd:string"/>
+       </xsd:complexType>
+       <xsd:complexType name="TA_lastupdate">
+           <xsd:attribute name="value" type="xsd:dateTime"/>
+       </xsd:complexType>
+       
+       
+       <!-- Declaring Element -->
+       
+    <xsd:element name="current">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="city"/>
+                <xsd:element ref="temperature"/>
+                <xsd:element ref="feels_like"/>
+                <xsd:element ref="humidity"/>
+                <xsd:element ref="pressure"/>
+                <xsd:element ref="wind"/>
+                <xsd:element ref="clouds"/>
+                <xsd:element ref="visibility"/>
+                <xsd:element ref="precipitation"/>
+                <xsd:element ref="weather"/>
+                <xsd:element ref="lastupdate"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+   
+   <xsd:element name="city">
+       <xsd:complexType>
+           <xsd:all>
+               <xsd:element ref="coord"/>
+               <xsd:element ref="country"/>
+               <xsd:element ref="timezone"/>
+               <xsd:element ref="sun"/>
+            </xsd:all>
+            <xsd:attribute name="id" type="xsd:ID" use="required"/>
+            <xsd:attribute name="name" type="T_text_medium" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="coord" type="TA_coord"/>
+    <xsd:element name="country" type="T_text_short"/>
+    <xsd:element name="timezone" type="xsd:integer"/>
+    <xsd:element name="sun" type="TA_sun"/>
+    
+    <xsd:element name="temperature" type="TA_temperature"/>
+    <xsd:element name="feels_like" type="TA_feels_like"/>
+    <xsd:element name="humidity" type="TA_humidity"/>
+    <xsd:element name="pressure" type="TA_pressure"/>
+    <xsd:element name="wind">
+        <xsd:complexType>
+            <xsd:all>
+                <xsd:element ref="speed"/>
+                <xsd:element ref="gusts"/>
+                <xsd:element ref="direction"/>
+            </xsd:all>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="speed" type="TA_speed"/>
+    <xsd:element name="gusts" type="TA_gusts"/>
+    <xsd:element name="direction" type="TA_direction"/>
+    
+    <xsd:element name="clouds" type="TA_clouds"/>
+    <xsd:element name="visibility" type="TA_visibility"/>
+    <xsd:element name="precipitation" type="TA_precipitation"/>
+    <xsd:element name="weather" type="TA_weather"/>
+    <xsd:element name="lastupdate" type="TA_lastupdate"/>
+    
+</xsd:schema>
